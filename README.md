@@ -8,7 +8,7 @@ A browser-only produce-distribution planning simulator built for Bugged Out PS7.
 
 The **Living Supply Chain** landing page includes pointer-responsive particles, animated real allocation paths and an interactive delay demonstration using the actual engine. Launch the full planner directly as a guest. The redesigned dispatch workspace retains editable scenarios, honest comparisons and downloads.
 
-**Account status:** the GitHub/Supabase sign-in integration and entry screen are implemented, but provider setup and real account verification are pending the owner's account configuration. The GitHub button is deliberately disabled until configured. Guest access is complete. See [authentication setup](docs/auth-setup.md). No account, password or cloud storage is required to evaluate the application.
+**Account status:** real email/password sign-in and account creation use the configured Supabase project. Guest access remains complete. Session restoration and sign-out are included. Email verification follows the project setting; cloud scenario storage and password reset are outside this submission. GitHub OAuth is not offered because that provider is not enabled.
 
 ## Run locally
 

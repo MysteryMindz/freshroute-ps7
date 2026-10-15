@@ -1,3 +1,9 @@
+# Current account implementation
+
+The submitted app now uses email/password authentication against the owner-provided Supabase project. It supports sign-in, account creation, confirmation-required feedback, session restoration, sign-out and full guest access. No cloud scenario storage or password reset is implemented. GitHub is not enabled and is not offered by the current screen. The browser-public URL/key are configured as GitHub Actions repository variables. Email ownership is not verified when Confirm email is disabled.
+
+The instructions below describe optional future GitHub OAuth setup, not the current active login method.
+
 # GitHub sign-in: setup still required
 
 **Current status:** the sign-in interface and Supabase client integration are implemented. No Supabase project or real provider keys have been provisioned for this app, and real GitHub sign-in has not been configured or tested. Guest access remains the complete working demonstration. The dashboard is intentionally accessible to guests; signing in does not currently enable cloud storage or a protected data service.

@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
 import { MotionConfig } from 'motion/react';
 import { ArrowRight, Leaf, LogOut, UserRound } from 'lucide-react';
-import { supabase, authRedirectUrl } from './auth/client';
+import { supabase } from './auth/client';
 import { oauthReturnError, readRoute } from './auth/config';
 import type { Route } from './auth/config';
 import SignIn from './pages/SignIn';
@@ -44,15 +44,6 @@ export default function App() {
     }).catch(() => { if (active) setAuthError('Sign-in is unavailable. You can still explore the guest demo.'); });
     return () => { active = false; subscription.unsubscribe(); };
   }, []);
-  const signIn = async () => {
-    if (!supabase || authBusy) return;
-    if (dashboardOpened && !window.confirm('GitHub sign-in opens a new page. Your workspace is held in memory, so export any scenario you want to keep before continuing. Continue to GitHub?')) return;
-    setAuthBusy(true); setAuthError(null);
-    try {
-      const { error } = await supabase.auth.signInWithOAuth({ provider: 'github', options: { redirectTo: authRedirectUrl(), scopes: 'read:user user:email' } });
-      if (error) throw error;
-    } catch { setAuthError('GitHub sign-in could not start. Please try again, or continue as a guest.'); setAuthBusy(false); }
-  };
   const signOut = async () => {
     if (!supabase) return;
     setAuthBusy(true);
@@ -62,7 +53,7 @@ export default function App() {
   };
   const accountControl = <div className="account-control">{session ? <><span className="account-name"><UserRound size={14} />{String(session.user.user_metadata.user_name || session.user.user_metadata.full_name || 'Signed in').slice(0,30)}</span><button onClick={signOut} disabled={authBusy} title="Sign out of this browser"><LogOut size={14} /><span>Sign out</span></button></> : <><span className="guest-badge">Guest workspace</span><button onClick={() => navigate('signin')}>Sign in <ArrowRight size={14} /></button></>}</div>;
   return <MotionConfig reducedMotion="user"><a href="#page-content" className="shell-skip" onClick={event => { event.preventDefault(); const target = document.getElementById(route === "home" ? "landing-main" : route === "dashboard" ? "overview" : "auth-entry"); if (target) { target.setAttribute("tabindex", "-1"); target.focus(); target.scrollIntoView({ behavior: "instant" }); } }}>Skip to content</a><div id="page-content" tabIndex={-1}><Suspense fallback={<div className="shell-loading" role="status"><Leaf size={32} /><p>Opening FreshRoute…</p></div>}>
-    {route === 'home' ? <Landing onLaunch={() => navigate('dashboard')} onSignIn={() => navigate(session ? 'dashboard' : 'signin')} isSignedIn={!!session} /> : route === 'signin' ? <SignIn configured={!!supabase} busy={authBusy} error={authError} onSignIn={signIn} onGuest={() => navigate('dashboard')} onHome={() => navigate('home')} /> : null}
+    {route === 'home' ? <Landing onLaunch={() => navigate('dashboard')} onSignIn={() => navigate(session ? 'dashboard' : 'signin')} isSignedIn={!!session} /> : route === 'signin' ? <SignIn configured={!!supabase} busy={authBusy} error={authError} onGuest={() => navigate('dashboard')} onHome={() => navigate('home')} /> : null}
     {(dashboardOpened || route === 'dashboard') && <div hidden={route !== 'dashboard'}><Dashboard onHome={() => navigate('home')} accountControl={accountControl} /></div>}
     {route === 'dashboard' && authError && <div className="shell-auth-error" role="alert">{authError}<button onClick={() => setAuthError(null)}>Dismiss</button></div>}
   </Suspense></div></MotionConfig>;
