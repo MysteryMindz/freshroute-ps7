@@ -6,7 +6,7 @@ A browser-only produce-distribution planning simulator built for Bugged Out PS7.
 
 **Demonstration data is synthetic. All outcomes are modeled, not evidence of real distributor savings.**
 
-The **Living Supply Chain** landing page includes pointer-responsive particles, animated real allocation paths and an interactive delay demonstration using the actual engine. Launch the full planner directly as a guest. The redesigned dispatch workspace separates Overview, Inventory & Markets, Allocations, Scenario Lab, Stock Reviews and Model Notes into focused hash routes. It retains shared editable scenarios, honest comparisons and downloads.
+The judge-facing landing page opens with an interactive dispatch manifest: stock, allocation evidence, disruption controls and the FEFO comparison. It uses actual engine results, with no decorative particle loop. Launch the full planner directly as a guest. The redesigned dispatch workspace separates Overview, Inventory & Markets, Allocations, Scenario Lab, Stock Reviews and Model Notes into focused hash routes. It retains shared editable scenarios, honest comparisons and downloads.
 
 **Account status:** real email/password sign-in and account creation use the configured Supabase project. Guest access remains complete. Session restoration and sign-out are included. Email verification follows the project setting; cloud scenario storage and password reset are outside this submission. GitHub OAuth is not offered because that provider is not enabled.
 
@@ -66,4 +66,4 @@ The Actions workflow runs locked dependency installation, tests and a production
 
 ## Attribution
 
-Uses open-source React, Vite, TypeScript, javascript-lp-solver, Lucide, Supabase client, Motion and Vitest under their respective licenses. Manrope and DM Sans are self-hosted from the official Google Fonts repository under the bundled SIL Open Font Licenses. Particle and allocation visuals are authored Canvas/SVG implementations, inspired by the React Bits interaction direction rather than copied components. AI coding assistance was used. Source and model assumptions are provided for reproducibility.
+Uses open-source React, Vite, TypeScript, javascript-lp-solver, Lucide, Supabase client and Vitest under their respective licenses. Manrope and DM Sans are self-hosted from the official Google Fonts repository under the bundled SIL Open Font Licenses. Particle and allocation visuals are authored Canvas/SVG implementations, inspired by the React Bits interaction direction rather than copied components. AI coding assistance was used. Source and model assumptions are provided for reproducibility.

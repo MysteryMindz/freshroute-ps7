@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-import { ArrowLeft, ArrowRight, Eye, EyeOff, Leaf, LockKeyhole, ShieldCheck, Sprout } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Eye, EyeOff, Leaf, LockKeyhole, ShieldCheck } from 'lucide-react';
 import { supabase, authRedirectUrl } from '../auth/client';
 import '../styles/auth.css';
 type Props = { configured: boolean; busy: boolean; error: string | null; onGuest: () => void; onHome: () => void };
@@ -31,7 +31,7 @@ export default function SignIn({ configured, busy, error, onGuest, onHome }: Pro
   return <main className="auth-page">
     <section className="auth-story" aria-label="FreshRoute introduction">
       <button className="auth-brand" onClick={onHome} aria-label="FreshRoute home"><Leaf size={30} />FreshRoute<span>.</span></button>
-      <div className="auth-story-content"><div className="auth-orbit" aria-hidden="true"><Sprout size={80} /><span /><span /><span /></div><h1>Good decisions.<br /><em>Fresh possibilities.</em></h1><p>Bring clarity to every batch, every destination and every tradeoff.</p></div>
+      <div className="auth-story-content"><h1>Your next dispatch,<br /><em>with a clear plan.</em></h1><p>Compare feasible allocations. Understand the trade-offs. Keep the evidence.</p><div className="auth-proof"><span>Constrained produce allocation</span><span>Transparent FEFO comparison</span><span>Scenario and report downloads</span></div></div>
       <p className="auth-story-footer">Produce distribution, thoughtfully modeled.</p>
     </section>
     <section className="auth-entry" id="auth-entry">
