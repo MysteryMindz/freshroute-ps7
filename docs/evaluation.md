@@ -52,3 +52,17 @@ The dependency update to Vitest 5.0.4 reported zero known npm vulnerabilities at
 An independent UI reviewer returned **Ship** for the four requested finishing fixes: secondary text contrast (sampled 6.57–7.13:1), mobile scroll discoverability, assumptions navigation and removal of decorative heading eyebrows. That verdict covers those four findings rather than asserting that every possible UI defect is absent.
 
 GitHub Actions run 38687179170 also passed on the reviewed release. Live JSON import rejected malformed syntax, accepted a valid sample while preserving its synthetic provenance, and recalculated successfully. Both allocation CSV and report JSON were downloaded from the live site, and a direct page refresh worked.
+
+## Authentication integration checks
+
+The landing/sign-in/dashboard redesign adds an optional Supabase GitHub authentication client while retaining full guest access. **No real Supabase project or provider credentials have been configured, and live GitHub sign-in has not been tested.** Earlier deployment evidence above describes the prior planner release; it does not establish deployment or provider readiness for this redesign.
+
+The expanded suite passed with Vitest 5.0.4:
+
+```text
+Test Files  4 passed (4)
+     Tests  54 passed (54)
+  Duration  431ms
+```
+
+The 26 added auth tests cover publishable and legacy anonymous configuration formats, rejection of obvious secret/service-role formats, malformed keys, unsafe URL forms, absent configuration, supported hash routes and fixed nonreflective OAuth error messages. Token fixtures are synthetic strings. These checks validate local configuration behavior; they do not prove JWT authenticity, real OAuth consent, callback exchange or session restoration. Those require the owner setup and live checklist in `docs/auth-setup.md`.

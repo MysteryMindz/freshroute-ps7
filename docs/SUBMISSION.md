@@ -12,7 +12,7 @@ FreshRoute is a browser-based planning simulator. It allocates produce batches t
 
 ## Two-minute demonstration
 
-1. Open the normal synthetic scenario. Point out the six batches, two commodities and three destinations, and the provenance label.
+1. Open the landing page, try the real-engine delay demo, then choose Launch planner. Open the normal synthetic scenario. Point out the six batches, two commodities and three destinations, and the provenance label.
 2. Show the calculated flow and baseline comparison. The normal sample has modeled net revenue ₹12,490 versus ₹10,510 for FEFO. Both dispatch 360 kg. The revenue-first plan has 90 kg spoilage versus zero for FEFO: explain this trade-off rather than claiming every metric improves.
 3. Add four hours of travel delay. Point out that results become stale, then recalculate. Inspect changed feasible deliveries and leftovers.
 4. Reduce transport capacity. Recalculate and inspect why stock cannot move.
@@ -31,7 +31,11 @@ FreshRoute is a browser-based planning simulator. It allocates produce batches t
 
 **What is missing?** Actual road routing, fixed truck activation costs, multi-trip schedules, temperature-dependent decay, learned demand response, acquisition/storage costs and calibrated uncertainty. Organizer data can be imported if it matches the disclosed model; a different cost/constraint structure needs adaptation.
 
-**How is correctness checked?** Independent allocation/accounting checks, a hand-calculated case, a known-optimum case, 30 generated scenarios, malformed-input tests and four solver-failure cases. All 28 automated tests pass; main flows and deployment have also been exercised in a browser.
+**How is correctness checked?** Independent allocation/accounting checks, a hand-calculated case, a known-optimum case, 30 generated scenarios, malformed-input tests and four solver-failure cases. All 54 automated tests pass; main flows and deployment have also been exercised in a browser.
+
+## Account status
+
+Guest access includes the complete simulator. The sign-in interface and Supabase integration are implemented, but the owner has not yet configured the new project/provider. Real GitHub sign-in is pending and has not been live-verified. Do not claim working accounts.
 
 ## Submission checklist
 

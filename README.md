@@ -6,6 +6,10 @@ A browser-only produce-distribution planning simulator built for Bugged Out PS7.
 
 **Demonstration data is synthetic. All outcomes are modeled, not evidence of real distributor savings.**
 
+The **Living Supply Chain** landing page includes pointer-responsive particles, animated real allocation paths and an interactive delay demonstration using the actual engine. Launch the full planner directly as a guest. The redesigned dispatch workspace retains editable scenarios, honest comparisons and downloads.
+
+**Account status:** the GitHub/Supabase sign-in integration and entry screen are implemented, but provider setup and real account verification are pending the owner's account configuration. The GitHub button is deliberately disabled until configured. Guest access is complete. See [authentication setup](docs/auth-setup.md). No account, password or cloud storage is required to evaluate the application.
+
 ## Run locally
 
 Use Node.js 22.12+ or 24+ and npm.
@@ -44,17 +48,17 @@ See [SPEC.md](SPEC.md) for the shared contract and [docs/evaluation.md](docs/eva
 
 ## Architecture and limitations
 
-React/TypeScript/Vite, `javascript-lp-solver`, Vitest and plain CSS. Source responsibilities: `src/engine` (optimization, validation, accounting), `src/data` (synthetic scenarios), `src/io` (validated import and safe exports), `src/App.tsx` (interface).
+React/TypeScript/Vite, `javascript-lp-solver`, Vitest, Lucide, Supabase client and plain CSS. Source responsibilities: `src/engine` (optimization, validation, accounting), `src/data` (synthetic scenarios), `src/io` (validated import and safe exports), `src/pages` (landing, sign-in and dashboard), `src/auth` (optional account integration), `src/App.tsx` (navigation and session handling).
 
-No server, database, account system, live prices, geographic route search, learned demand response, temperature decay or stochastic shelf-life prediction. Costs are supplied per kg; fixed truck activation fees and multi-trip schedules need a different model. The flow diagram visualizes allocations rather than real road routes. Results assist simulation and require review before operational use.
+Planning runs entirely in the browser; optional accounts use an external Supabase authentication service once configured. There is no cloud scenario storage, live pricing, geographic route search, learned demand response, temperature decay or stochastic shelf-life prediction. Costs are supplied per kg; fixed truck activation fees and multi-trip schedules need a different model. The flow diagram visualizes allocations rather than real road routes. Results assist simulation and require review before operational use. Workspace edits survive in-app navigation but are held in memory: export before closing or refreshing the tab.
 
 ## GitHub Pages
 
-The Actions workflow runs locked dependency installation, tests and a production build before deployment. In repository Settings → Pages, use **GitHub Actions** as the publishing source. It builds with `GITHUB_PAGES_BASE=/<repository-name>/`. The app uses no path router or browser-exposed credentials.
+The Actions workflow runs locked dependency installation, tests and a production build before deployment. In repository Settings → Pages, use **GitHub Actions** as the publishing source. It builds with `GITHUB_PAGES_BASE=/<repository-name>/`. Hash navigation supports refresh at the same repository URL. Optional auth uses browser-public project configuration; never put service-role keys or GitHub client secrets into a Vite build.
 
 ## Two-minute demo
 
-1. Load the normal synthetic dataset and generate the plan.
+1. Explore the landing page's live delay simulation, then **Launch planner**.
 2. Compare modeled net revenue, spoilage and demand fulfillment against FEFO.
 3. Inspect a selected allocation and leftover-stock reason.
 4. Add a delay or reduce transport capacity, rerun, and explain changed outcomes.
@@ -62,4 +66,4 @@ The Actions workflow runs locked dependency installation, tests and a production
 
 ## Attribution
 
-Uses open-source React, Vite, TypeScript, javascript-lp-solver, Lucide and Vitest under their respective licenses. AI coding assistance was used. Source and model assumptions are provided for reproducibility.
+Uses open-source React, Vite, TypeScript, javascript-lp-solver, Lucide, Supabase client, Motion and Vitest under their respective licenses. Manrope and DM Sans are self-hosted from the official Google Fonts repository under the bundled SIL Open Font Licenses. Particle and allocation visuals are authored Canvas/SVG implementations, inspired by the React Bits interaction direction rather than copied components. AI coding assistance was used. Source and model assumptions are provided for reproducibility.

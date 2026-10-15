@@ -1,0 +1,216 @@
+/* The dispatch desk: a scoped operational companion to the Living Supply Chain. */
+.living-dashboard{--green:#163f2e;--muted:#707a68;--line:#dfe4d5;--lime:#d0ef82;background:#f5f6ee;color:#213b2a;min-height:100vh;font-family:'DM Sans',sans-serif}
+.living-dashboard .sidebar{width:230px;background:#123f2e;border:0;padding:32px 19px 23px;color:#e9f0e2}
+.living-dashboard .brand{background:none;border:0;padding:0 7px;color:#f5f7ef;gap:10px;font-size:25px;font-weight:750;letter-spacing:-1.3px}
+.living-dashboard .brand-icon{width:36px;height:40px;border-radius:10px;background:#d0ef82;color:#143c2d}
+.living-dashboard .brand-dot{color:#d0ef82}
+.living-dashboard .sidebar-label{font-size:10px;letter-spacing:2px;color:#89ad98;margin:57px 13px 20px}
+.living-dashboard .sidebar nav{gap:10px}
+.living-dashboard .nav-item{border-radius:9px;color:#a6c2b0;font-size:12px;padding:14px 12px;font-weight:500}
+.living-dashboard .nav-item:hover{background:#204d3b;color:#fff}
+.living-dashboard .nav-item.selected{background:#d0ef82;color:#173c2b;font-weight:700}
+.living-dashboard .nav-item.selected .nav-indicator{background:#2d5434}
+.living-dashboard .sidebar-art{border:1px solid #3f6551;background:transparent;border-radius:13px;padding:24px 19px;color:#cdeb91;margin-bottom:24px}
+.living-dashboard .sidebar-art:after{border-color:#3d6350}
+.living-dashboard .sidebar-art p{font-size:18px;line-height:1.55;color:#f0f5e9;letter-spacing:-.5px}
+.living-dashboard .sidebar-art>span{color:#a8c0aa;font-size:11px;margin-top:13px}
+.living-dashboard .local-status{font-size:11px;color:#aec9b4}
+.living-dashboard .local-status i{background:#c6ed7a}
+.living-dashboard .local-status>span{color:#87a991;font-size:10px}
+.living-dashboard .version{color:#7b9e88;font-size:9px;letter-spacing:1.8px}
+.living-dashboard .main-content{margin-left:230px;width:calc(100% - 230px);min-width:0}
+.living-dashboard .topbar{height:76px;padding:0 39px;background:#fafbf5;border-bottom:1px solid #e2e5d8}
+.living-dashboard .breadcrumb{font-size:12px;color:#7a8570;gap:13px;align-items:center}
+.living-dashboard .breadcrumb strong{color:#42583a;font-weight:500}
+.living-dashboard .dashboard-home-link{padding:0;background:transparent;color:#859178;font-size:12px}
+.living-dashboard .dashboard-home-link:hover{color:#24452f}
+.living-dashboard .simulation-label{font-size:11px;color:#6f7f60;gap:6px}
+.living-dashboard .avatar{color:#183e2c;background:#e6eecf;width:34px;height:34px;font-size:10px}
+.living-dashboard .workspace{padding:38px 39px 0;max-width:1650px}
+.living-dashboard .page-heading{align-items:flex-end;margin-bottom:28px;gap:20px}
+.living-dashboard .dashboard-page-label{font-size:10px;letter-spacing:2px;font-weight:700;color:#778767;display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.living-dashboard .dashboard-page-label>span{height:6px;width:6px;background:#7fa342;border-radius:50%}
+.living-dashboard .page-heading h1{font-family:'Manrope',sans-serif;font-size:43px;letter-spacing:-2px;font-weight:650;line-height:1.2;color:#173d2b}
+.living-dashboard .page-heading h1>span{color:#8aaa48}
+.living-dashboard .page-heading p{font-size:13px;line-height:1.7;color:#7d896e;margin-top:11px;max-width:570px}
+.living-dashboard .heading-actions{gap:9px;flex-shrink:0;padding-bottom:2px}
+.living-dashboard .button{font-size:12px;min-height:42px;border-radius:8px;gap:8px;padding:0 15px;font-weight:600}
+.living-dashboard .button-white{background:#fff;border-color:#dce3cd;color:#62764d}
+.living-dashboard .button-white:hover{background:#edf2e0;border-color:#bdcba8}
+.living-dashboard .button-primary{background:#173f2c;border-color:#173f2c;color:#f2f7e9;box-shadow:0 4px 10px #183d2510}
+.living-dashboard .button-primary:hover{background:#28543b;border-color:#28543b}
+.living-dashboard .scenario-bar{padding:17px 19px;border-radius:13px;background:#fff;border:1px solid #dde4d2;box-shadow:0 3px 6px #30492103;gap:16px}
+.living-dashboard .scenario-icon{width:42px;height:42px;border-radius:10px;background:#f0f4e7;border:1px solid #e2e9d4;color:#73914e}
+.living-dashboard .scenario-picker label{font-size:9px;font-weight:700;letter-spacing:1.5px;color:#93a17f;margin-bottom:6px}
+.living-dashboard .select-wrap select{font-size:12px;color:#415a32;max-width:300px;line-height:1.5}
+.living-dashboard .scenario-meta{font-size:11px;gap:14px;color:#8a9679}
+.living-dashboard .scenario-meta>span:last-child{font-size:10px}
+.living-dashboard .pill{background:#f4f8eb;border:1px solid #e2eacb;padding:6px 8px;font-size:10px;color:#6c884b;border-radius:5px}
+.living-dashboard .scenario-caption{font-size:10px;color:#889577;margin:11px 2px 22px;align-items:center}
+.living-dashboard .scenario-caption button{font-size:11px;color:#7d935c;gap:4px}
+.living-dashboard .metrics-grid{gap:15px;margin-bottom:24px}
+.living-dashboard .metric-card{border:1px solid #dfe5d3;border-radius:13px;padding:21px 22px 17px;background:#fff;min-height:155px;animation:desk-arrive .5s ease-out both}
+.living-dashboard .metric-card:nth-child(2){animation-delay:.05s}
+.living-dashboard .metric-card:nth-child(3){animation-delay:.1s}
+.living-dashboard .metric-card:nth-child(4){animation-delay:.15s}
+.living-dashboard .metric-label{font-size:11px;color:#7c8d68;font-weight:500;gap:5px}
+.living-dashboard .metric-label>span{color:#829b64}
+.living-dashboard .metric-value{font-family:'Manrope',sans-serif;font-weight:650;font-size:33px;letter-spacing:-1.5px;color:#20452d;margin-top:14px;line-height:1.2}
+.living-dashboard .metric-value>span{font-family:'DM Sans',sans-serif;font-size:14px;color:#98a582;margin-left:5px}
+.living-dashboard .metric-baseline{font-size:10px;color:#95a181;margin-top:7px}
+.living-dashboard .metric-difference{font-size:10px;gap:5px;margin-top:15px;color:#85986b}
+.living-dashboard .metric-difference.positive{color:#708c4b}
+.living-dashboard .metric-card.featured{background:#183f2e;border-color:#183f2e}
+.living-dashboard .metric-card.featured .metric-label{color:#abc39a}
+.living-dashboard .metric-card.featured .metric-label>span{color:#b5d883}
+.living-dashboard .metric-card.featured .metric-value{color:#d0ef82}
+.living-dashboard .metric-card.featured .metric-baseline{color:#9bb48a}
+.living-dashboard .metric-card.featured .metric-difference{color:#c1dd9a}
+.living-dashboard .stale .metric-card:after{color:#9a803e;font-size:7px;bottom:6px;right:11px}
+.living-dashboard .stale .metric-card.featured:after{color:#e0d192}
+.living-dashboard .planning-grid{grid-template-columns:minmax(0,2.15fr) minmax(275px,1fr);gap:22px;margin-bottom:22px}
+.living-dashboard .card{border:1px solid #dee5d2;border-radius:15px;box-shadow:0 4px 7px #3c4b2803}
+.living-dashboard .card-heading{padding:25px 25px 0;gap:16px}
+.living-dashboard .dashboard-section-label{font-size:9px;letter-spacing:1.6px;color:#8b9c76;margin-bottom:8px;font-weight:700}
+.living-dashboard .card h2{font-family:'Manrope',sans-serif;font-size:19px;font-weight:650;letter-spacing:-.7px;color:#27482f}
+.living-dashboard .card-heading p{font-size:11px;color:#8a9978;line-height:1.7;margin-top:7px;max-width:390px}
+.living-dashboard .status-chip{background:#f1f6e7;border:1px solid #e0e9cc;font-size:9px;padding:6px 8px;margin-top:6px;color:#839e5a;gap:1px}
+.living-dashboard .status-chip.amber{background:#fcf2dd;border-color:#e9d6a7;color:#a47a31}
+.living-dashboard .allocation-card{background:#fff}
+.living-dashboard .flow-scroll{padding:25px 17px 15px;max-height:470px;background:#fff;scrollbar-width:thin}
+.living-dashboard .flow-svg{min-width:510px;max-height:none;height:auto;width:100%;display:block}
+.living-dashboard .svg-heading{font-family:'DM Sans',sans-serif;fill:#93a27f;font-size:9px;font-weight:600;letter-spacing:1.3px}
+.living-dashboard .svg-name{font-family:'DM Sans',sans-serif;fill:#4e683a;font-size:12px;font-weight:600}
+.living-dashboard .svg-small{font-family:'DM Sans',sans-serif;fill:#91a07b;font-size:9px}
+.living-dashboard .flow-market-node .svg-name{fill:#f2f6e8}
+.living-dashboard .flow-market-node .svg-small{fill:#adc59a}
+.living-dashboard .flow-particle-path{opacity:.9;stroke-dasharray:1 17;animation:allocation-flow 14s linear infinite}
+.living-dashboard .flow-batch-node rect{transition:stroke .18s}
+.living-dashboard .flow-batch-node:hover rect{stroke:#9fb77a}
+.living-dashboard .flow-footer{margin:0 25px;border-color:#edf0e6;font-size:10px;padding:17px 0;color:#93a17c;gap:12px}
+.living-dashboard .legend-line{height:4px;background:#9cbd65;width:20px}
+.living-dashboard .flow-footer>span{color:#869c68;gap:6px}
+.living-dashboard .lab-card{background:#eaf0dc;border:1px solid #dce5c9;padding:25px}
+.living-dashboard .lab-heading{gap:9px;margin-bottom:16px}
+.living-dashboard .lab-icon{width:30px;height:30px;border:1px solid #d5dfbd;border-radius:8px;color:#7d9a56;display:grid;place-items:center;background:#f0f5e5}
+.living-dashboard .dashboard-lab-tag{font-size:9px;color:#809761;letter-spacing:1.6px;font-weight:700}
+.living-dashboard .lab-card h2{font-size:25px;letter-spacing:-1px;color:#3c5930}
+.living-dashboard .lab-card>p{font-size:12px;line-height:1.75;color:#8a9a72;margin-top:9px}
+.living-dashboard .lab-control{margin-top:26px}
+.living-dashboard .control-title{margin-bottom:12px;gap:12px}
+.living-dashboard .control-title label{font-size:11px;color:#7d9461;gap:7px}
+.living-dashboard .control-title strong{font-size:15px;color:#506c3c;font-weight:600}
+.living-dashboard .control-title strong>span{font-size:10px;color:#96a77b}
+.living-dashboard .lab-control input[type=range]{height:5px;accent-color:#789848;margin-bottom:12px}
+.living-dashboard .range-labels{font-size:9px;color:#98a97d}
+.living-dashboard .lab-note{margin:26px 0 18px;gap:8px;color:#94a577}
+.living-dashboard .lab-note p{font-size:10px;line-height:1.8}
+.living-dashboard .lab-button{background:#d8e6b7;border-color:#c8daa0;color:#6d864e;font-size:11px;min-height:40px}
+.living-dashboard .lab-button:hover{background:#c9dc9c}
+.living-dashboard .inputs-card{margin-bottom:22px}
+.living-dashboard .inputs-toggle{padding:21px 24px}
+.living-dashboard .input-title{gap:13px}
+.living-dashboard .input-title h2{font-size:16px;letter-spacing:-.4px}
+.living-dashboard .input-title p{font-size:11px;color:#91a079;margin-top:6px;line-height:1.6}
+.living-dashboard .icon-box{width:39px;height:39px;background:#f2f6e9;border-color:#e2e9d2;border-radius:9px;color:#8aa565}
+.living-dashboard .input-toggle-label{font-size:11px;color:#8ca16f}
+.living-dashboard .input-editor{padding:0 24px 23px;border-color:#edf1e3}
+.living-dashboard .global-inputs{gap:22px;padding:24px 0;border-color:#eaf0df}
+.living-dashboard .global-inputs>label{font-size:11px;color:#83996a;gap:9px}
+.living-dashboard .number-field>div{border:1px solid #dce5cd;background:#fbfcf8;border-radius:7px}
+.living-dashboard .number-field input{font-size:12px;padding:9px;color:#627c48;min-width:60px}
+.living-dashboard .number-field input:focus{outline-color:#9cb974}
+.living-dashboard .number-field span{font-size:10px;color:#9aac83}
+.living-dashboard .number-field.invalid>div{border-color:#bd7865;background:#fff7f2}
+.living-dashboard .table-label{font-size:12px;color:#739054;margin:24px 0 14px}
+.living-dashboard .table-label>span{font-size:10px;color:#9bab88}
+.living-dashboard .input-table th{font-size:10px;color:#90a178;padding:13px 12px;background:#f7faf1;border-color:#e6edd9}
+.living-dashboard .input-table td{padding:12px;border-color:#edf2e4}
+.living-dashboard .input-table td>strong{font-size:12px;color:#68844d}
+.living-dashboard .input-table td>small,.living-dashboard .input-table th>small{font-size:9px;color:#9bae86}
+.living-dashboard .editor-footer{margin-top:20px;gap:18px}
+.living-dashboard .editor-footer>span{font-size:10px;color:#99a885;line-height:1.6}
+.living-dashboard .results-heading{padding-top:24px;align-items:center}
+.living-dashboard .button-small{min-height:34px;font-size:10px;color:#86a066;border-color:#dfe8d0;padding:0 11px;box-shadow:none}
+.living-dashboard .result-tabs{padding:0 25px;gap:25px;border-color:#e8efda;margin-top:25px}
+.living-dashboard .result-tabs>button{font-size:11px;color:#9cad89;padding-bottom:15px}
+.living-dashboard .result-tabs>button.active{color:#6f8e4d;border-bottom-color:#85a355}
+.living-dashboard .result-tabs>button span{background:#edf4de;color:#93ad6f;font-size:9px}
+.living-dashboard .results-table th{font-size:9px;color:#91a478;letter-spacing:1px;background:#fbfdf8;padding:16px 23px;border-color:#edf2e4}
+.living-dashboard .results-table td{font-size:12px;color:#809969;padding:17px 23px;border-color:#edf2e3}
+.living-dashboard .results-table td>strong{font-size:12px;color:#6c8750}
+.living-dashboard .results-table td>small{font-size:10px;color:#a0b18b;margin-top:5px}
+.living-dashboard .results-table .numeric{font-size:13px;color:#6b8951}
+.living-dashboard .results-table .reason-cell{font-size:11px;color:#96a783;min-width:240px;line-height:1.8}
+.living-dashboard .accounting-total td{background:#f3f8e8;color:#75934f;font-weight:700}
+.living-dashboard .accounting-note{font-size:11px;line-height:1.8;padding:18px 24px;color:#97a77f}
+.living-dashboard .insights-grid{gap:22px;margin-top:22px}
+.living-dashboard .insights-grid h2{font-size:18px}
+.living-dashboard .count-chip{background:#f0f6e4;color:#91a872;font-size:12px;border-radius:6px;padding:8px 11px}
+.living-dashboard .insight-content{padding:20px 25px 24px}
+.living-dashboard .leftover-row{padding:14px 0;border-color:#edf2e3;gap:10px}
+.living-dashboard .leftover-row strong,.living-dashboard .discount-row strong{font-size:12px;color:#779258;gap:12px}
+.living-dashboard .leftover-row strong>span{font-size:12px;color:#91a876}
+.living-dashboard .leftover-row small{font-size:11px;color:#9aac87;line-height:1.75;margin-top:6px}
+.living-dashboard .produce-dot{background:#b0ca83;margin-top:5px}
+.living-dashboard .insight-footnote{font-size:10px;color:#a6b28f;line-height:1.8}
+.living-dashboard .discount-card{background:#faf8ef;border-color:#e7e2ce}
+.living-dashboard .discount-symbol{font-size:31px;color:#c7bc93}
+.living-dashboard .discount-row{padding:13px 0;border-color:#eae5d3}
+.living-dashboard .discount-row strong{color:#a59a72}
+.living-dashboard .discount-row strong>span{background:#f0e9d3;color:#b1a477;font-size:9px;padding:4px 7px}
+.living-dashboard .discount-row small,.living-dashboard .discount-row p{font-size:11px;line-height:1.8;color:#aba181}
+.living-dashboard .discount-disclaimer{font-size:10px;color:#b0a785;line-height:1.8;padding-top:17px;gap:8px}
+.living-dashboard .muted{font-size:12px;line-height:1.8;color:#9fac88}
+.living-dashboard .page-footer{padding:27px 0;font-size:10px;color:#a2af8d;gap:20px}
+.living-dashboard .page-footer button{font-size:10px;color:#8ca672}
+.living-dashboard .notes-grid{padding:25px;gap:25px}
+.living-dashboard .notes-grid strong{font-size:12px;color:#8aa56a}
+.living-dashboard .notes-grid p{font-size:11px;color:#a0ae88;line-height:1.8}
+.living-dashboard .alert{font-size:11px;line-height:1.8;border-radius:10px;padding:14px 17px;margin-bottom:16px}
+.living-dashboard .alert-warning{background:#fff8e8;border-color:#ebdfb8;color:#a58b48}
+.living-dashboard .alert-info{background:#eef5e0;border-color:#d7e6bd;color:#89a35b}
+.living-dashboard .alert-error{background:#fff0e9;border-color:#edcfc1;color:#b6745c}
+.living-dashboard .empty-state{min-height:330px;color:#a6bd85}
+.living-dashboard .empty-state h3{color:#87a267;font-size:17px}
+.living-dashboard .empty-state p{font-size:12px;color:#9caf84}
+.living-dashboard .table-empty{font-size:12px;color:#99ac82;padding:38px 22px;line-height:1.8}
+.living-dashboard :is(button,a,input,select,[tabindex]):focus-visible{outline:3px solid #a4c66e;outline-offset:4px}
+
+@keyframes allocation-flow{from{stroke-dashoffset:180}to{stroke-dashoffset:0}}
+@keyframes desk-arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+@media(min-width:1650px){.living-dashboard .workspace{padding:45px 50px 0}.living-dashboard .topbar{padding:0 50px}.living-dashboard .page-heading h1{font-size:48px}.living-dashboard .metric-card{padding:24px 27px 21px}.living-dashboard .metric-value{font-size:39px}.living-dashboard .planning-grid{grid-template-columns:minmax(0,2.45fr) minmax(290px,1fr)}}
+@media(max-width:1350px){.living-dashboard .sidebar{width:205px;padding:30px 14px}.living-dashboard .brand{font-size:23px;padding:0 5px;gap:8px}.living-dashboard .brand-icon{width:32px;height:35px}.living-dashboard .main-content{margin-left:205px;width:calc(100% - 205px)}.living-dashboard .workspace{padding:32px 27px 0}.living-dashboard .topbar{padding:0 27px}.living-dashboard .page-heading h1{font-size:37px}.living-dashboard .page-heading p{font-size:12px;max-width:450px}.living-dashboard .heading-actions .button{font-size:10px;min-height:39px;padding:0 11px}.living-dashboard .metric-card{padding:18px 17px 16px;min-height:150px}.living-dashboard .metric-value{font-size:29px}.living-dashboard .metric-label{font-size:10px}.living-dashboard .metric-baseline{font-size:9px}.living-dashboard .metric-difference{font-size:9px}.living-dashboard .scenario-meta{gap:8px;flex-direction:column;align-items:flex-start}.living-dashboard .scenario-meta>span:last-child{font-size:9px}.living-dashboard .select-wrap select{font-size:11px;max-width:255px}.living-dashboard .planning-grid{gap:18px;grid-template-columns:minmax(0,1.9fr) minmax(260px,1fr)}.living-dashboard .card-heading{padding:22px 20px 0}.living-dashboard .card h2{font-size:17px}.living-dashboard .lab-card{padding:22px}.living-dashboard .lab-card h2{font-size:23px}.living-dashboard .lab-card>p{font-size:11px}.living-dashboard .flow-scroll{padding:25px 10px 16px}.living-dashboard .flow-footer{margin:0 20px;font-size:9px}.living-dashboard .lab-control{margin-top:24px}.living-dashboard .control-title label{font-size:10px}.living-dashboard .insights-grid{gap:18px}}
+@media(max-width:1100px){.living-dashboard .sidebar{width:76px;padding:25px 12px}.living-dashboard .brand{padding:0;justify-content:center}.living-dashboard .brand>span:last-child,.living-dashboard .sidebar-label,.living-dashboard .sidebar-art,.living-dashboard .local-status,.living-dashboard .version,.living-dashboard .nav-indicator{display:none}.living-dashboard .brand-icon{width:38px;height:41px}.living-dashboard .sidebar nav{margin-top:48px;gap:15px}.living-dashboard .nav-item{font-size:0;padding:14px 0;justify-content:center}.living-dashboard .nav-item>span{gap:0}.living-dashboard .nav-item svg{width:21px;height:21px}.living-dashboard .main-content{margin-left:76px;width:calc(100% - 76px)}.living-dashboard .page-heading h1{font-size:39px}.living-dashboard .scenario-meta>span:last-child{display:none}.living-dashboard .metrics-grid{gap:12px}.living-dashboard .metric-value{font-size:30px}.living-dashboard .card-heading p{font-size:10px}.living-dashboard .status-chip{font-size:8px}.living-dashboard .flow-svg{min-width:500px}}
+@media(max-width:900px){.living-dashboard .workspace{padding:30px 22px 0}.living-dashboard .topbar{padding:0 22px;height:68px}.living-dashboard .page-heading{align-items:flex-start;flex-direction:column;gap:20px}.living-dashboard .page-heading h1{font-size:39px}.living-dashboard .page-heading p{max-width:none;font-size:12px}.living-dashboard .heading-actions{justify-content:flex-end;width:100%}.living-dashboard .heading-actions .button{font-size:11px;padding:0 14px;min-height:40px}.living-dashboard .planning-grid{grid-template-columns:1fr}.living-dashboard .card-heading{padding:24px 25px 0}.living-dashboard .card h2{font-size:20px}.living-dashboard .card-heading p{font-size:11px}.living-dashboard .flow-scroll{padding:27px 20px 18px}.living-dashboard .flow-footer{margin:0 25px;font-size:10px}.living-dashboard .lab-card{display:grid;grid-template-columns:1fr 1fr;column-gap:30px;padding:25px}.living-dashboard .lab-heading,.living-dashboard .lab-card h2,.living-dashboard .lab-card>p,.living-dashboard .lab-note,.living-dashboard .lab-button{grid-column:1/-1}.living-dashboard .lab-card>p{max-width:500px;font-size:12px}.living-dashboard .lab-card h2{font-size:27px}.living-dashboard .control-title label{font-size:12px}.living-dashboard .lab-note p{font-size:11px}.living-dashboard .metrics-grid{grid-template-columns:1fr 1fr;gap:14px}.living-dashboard .metric-card{padding:22px;min-height:162px}.living-dashboard .metric-value{font-size:35px}.living-dashboard .metric-label{font-size:12px}.living-dashboard .metric-baseline,.living-dashboard .metric-difference{font-size:10px}.living-dashboard .metric-difference{margin-top:16px}.living-dashboard .insights-grid{grid-template-columns:1fr}.living-dashboard .insight-content{padding:20px 25px 25px}.living-dashboard .status-chip{font-size:9px}}
+@media(max-width:650px){.living-dashboard .scenario-bar{flex-wrap:wrap;padding:16px;gap:15px}.living-dashboard .scenario-picker{flex:1}.living-dashboard .scenario-meta{margin-left:auto}.living-dashboard .scenario-bar>.button{width:100%;margin-top:0}.living-dashboard .select-wrap select{max-width:285px;font-size:11px}.living-dashboard .scenario-icon{width:35px;height:37px}.living-dashboard .heading-actions{justify-content:flex-start}.living-dashboard .inputs-toggle{padding:20px 18px}.living-dashboard .input-title h2{font-size:14px}.living-dashboard .input-title p{font-size:10px}.living-dashboard .input-toggle-label{font-size:0;gap:0}.living-dashboard .input-editor{padding:0 18px 20px}.living-dashboard .global-inputs{gap:12px;flex-wrap:wrap}.living-dashboard .global-inputs>label{font-size:10px;min-width:100px}.living-dashboard .editor-footer{flex-direction:column;align-items:flex-start}.living-dashboard .results-heading{align-items:flex-start;flex-direction:column;gap:16px}.living-dashboard .result-downloads{align-self:flex-end}.living-dashboard .page-footer{flex-wrap:wrap;gap:13px}.living-dashboard .footer-unit{display:none}.living-dashboard .notes-grid{grid-template-columns:1fr}.living-dashboard .scenario-caption{align-items:flex-start;line-height:1.7;font-size:10px}.living-dashboard .scenario-caption button{font-size:10px;white-space:nowrap}.living-dashboard .flow-footer{flex-wrap:wrap}}
+@media(max-width:480px){.living-dashboard .sidebar{width:56px;padding:22px 8px}.living-dashboard .brand-icon{width:32px;height:35px;border-radius:9px}.living-dashboard .brand-icon svg{width:23px}.living-dashboard .sidebar nav{margin-top:38px;gap:13px}.living-dashboard .nav-item{border-radius:7px;padding:13px 0}.living-dashboard .nav-item svg{width:19px;height:19px}.living-dashboard .main-content{margin-left:56px;width:calc(100% - 56px)}.living-dashboard .topbar{height:59px;padding:0 16px}.living-dashboard .breadcrumb,.living-dashboard .dashboard-home-link{font-size:10px}.living-dashboard .breadcrumb{gap:8px}.living-dashboard .simulation-label{display:none}.living-dashboard .workspace{padding:25px 15px 0}.living-dashboard .dashboard-page-label{font-size:8px;letter-spacing:1.5px}.living-dashboard .page-heading h1{font-size:33px;letter-spacing:-1.6px}.living-dashboard .page-heading p{font-size:11px;line-height:1.8}.living-dashboard .heading-actions{gap:7px}.living-dashboard .heading-actions .button{font-size:10px;padding:0 12px;min-height:37px}.living-dashboard .scenario-icon{display:none}.living-dashboard .scenario-meta{display:none}.living-dashboard .select-wrap select{font-size:11px;max-width:240px}.living-dashboard .scenario-bar{padding:15px;gap:14px;border-radius:11px}.living-dashboard .scenario-caption{font-size:9px;gap:8px;margin-bottom:18px}.living-dashboard .scenario-caption button{font-size:9px}.living-dashboard .metrics-grid{gap:10px}.living-dashboard .metric-card{padding:17px 13px 16px;border-radius:11px;min-height:149px}.living-dashboard .metric-label{font-size:10px;align-items:flex-start;gap:6px;line-height:1.5}.living-dashboard .metric-label svg{width:14px;height:14px}.living-dashboard .metric-value{font-size:27px;letter-spacing:-1.3px;margin-top:12px}.living-dashboard .metric-value>span{font-size:12px}.living-dashboard .metric-baseline{font-size:9px;line-height:1.6}.living-dashboard .metric-difference{font-size:8px;gap:2px;margin-top:13px}.living-dashboard .metric-difference svg{width:10px}.living-dashboard .stale .metric-card:after{font-size:6px;right:6px;bottom:5px}.living-dashboard .card{border-radius:12px}.living-dashboard .card-heading{padding:20px 17px 0;gap:10px}.living-dashboard .card h2{font-size:17px;letter-spacing:-.5px}.living-dashboard .dashboard-section-label{font-size:8px}.living-dashboard .card-heading p{font-size:10px;line-height:1.7}.living-dashboard .status-chip{font-size:7px;padding:5px;white-space:nowrap;margin-top:0}.living-dashboard .allocation-card .card-heading{flex-wrap:wrap}.living-dashboard .flow-scroll{padding:22px 10px 15px}.living-dashboard .flow-svg{min-width:490px}.living-dashboard .flow-footer{margin:0 17px;font-size:9px;gap:9px;padding:14px 0}.living-dashboard .flow-footer>div{flex-wrap:wrap}.living-dashboard .lab-card{padding:22px 19px;column-gap:18px}.living-dashboard .lab-card h2{font-size:25px}.living-dashboard .lab-card>p{font-size:11px}.living-dashboard .lab-control{margin-top:24px}.living-dashboard .control-title{flex-wrap:wrap;gap:8px}.living-dashboard .control-title label{font-size:10px}.living-dashboard .control-title strong{font-size:14px}.living-dashboard .lab-note{margin-top:22px}.living-dashboard .lab-note p{font-size:10px}.living-dashboard .lab-button{font-size:10px}.living-dashboard .input-title{gap:9px}.living-dashboard .input-title h2{font-size:12px}.living-dashboard .input-title p{font-size:9px}.living-dashboard .icon-box{width:32px;height:34px;flex-shrink:0}.living-dashboard .inputs-toggle{padding:18px 15px}.living-dashboard .input-editor{padding:0 14px 18px}.living-dashboard .global-inputs{gap:10px}.living-dashboard .global-inputs>label{font-size:9px;min-width:90px}.living-dashboard .table-label{font-size:11px;gap:10px}.living-dashboard .table-label>span{font-size:9px}.living-dashboard .results-heading{gap:15px}.living-dashboard .button-small{font-size:9px;padding:0 9px;min-height:33px}.living-dashboard .result-tabs{padding:0 17px;gap:18px;margin-top:22px}.living-dashboard .result-tabs>button{font-size:10px}.living-dashboard .results-table th{padding:14px 17px;font-size:8px}.living-dashboard .results-table td{padding:15px 17px;font-size:11px}.living-dashboard .results-table .reason-cell{font-size:10px}.living-dashboard .insights-grid h2{font-size:16px}.living-dashboard .insight-content{padding:17px}.living-dashboard .leftover-row strong,.living-dashboard .discount-row strong{font-size:11px}.living-dashboard .leftover-row small,.living-dashboard .discount-row p,.living-dashboard .discount-row small{font-size:10px}.living-dashboard .muted{font-size:11px}.living-dashboard .count-chip{font-size:11px;padding:7px 9px}.living-dashboard .insight-footnote,.living-dashboard .discount-disclaimer{font-size:9px}.living-dashboard .page-footer{font-size:9px;gap:11px;padding:22px 0}.living-dashboard .page-footer button{font-size:9px}.living-dashboard .notes-grid{padding:20px;gap:20px}.living-dashboard .alert{font-size:10px;padding:12px;border-radius:8px}}
+
+/* Supporting labels remain readable rather than disappearing into the canvas. */
+.living-dashboard .page-heading p{color:#6d7d5f}.living-dashboard .metric-label{color:#71865c}.living-dashboard .metric-baseline{color:#7c9066}.living-dashboard .metric-difference{color:#7d965e}.living-dashboard .card-heading p{color:#7b9165}.living-dashboard .scenario-caption{color:#7d9266}.living-dashboard .lab-card>p{color:#7a9060}.living-dashboard .range-labels{color:#7d9561}.living-dashboard .lab-note{color:#7e965f}.living-dashboard .leftover-row small,.living-dashboard .muted{color:#84986c}.living-dashboard .results-table .reason-cell{color:#819a67}.living-dashboard .discount-row small,.living-dashboard .discount-row p,.living-dashboard .discount-disclaimer{color:#95875f}.living-dashboard .notes-grid p{color:#85976e}
+@media(prefers-reduced-motion:reduce){.living-dashboard .flow-particle-path{animation:none;stroke-dasharray:none;opacity:.35}.living-dashboard .metric-card{animation:none}.living-dashboard *{transition:none!important}}
+
+/* Contrast is intentional: quiet labels still have to work on a real screen. */
+.living-dashboard :is(.dashboard-page-label,.dashboard-section-label,.scenario-picker label,.scenario-meta,.scenario-caption,.metric-label,.metric-baseline,.metric-difference,.card-heading p,.flow-footer,.lab-card>p,.control-title label,.range-labels,.lab-note,.input-title p,.input-toggle-label,.table-label,.table-label>span,.editor-footer>span,.accounting-note,.muted,.insight-footnote,.page-footer,.notes-grid p){color:#687c53}
+.living-dashboard .metric-value{overflow-wrap:anywhere}
+.living-dashboard .metric-card.featured .metric-label{color:#b6ccaa}
+.living-dashboard .metric-card.featured .metric-baseline{color:#abc29c}
+.living-dashboard .metric-card.featured .metric-difference{color:#c3e59b}
+.living-dashboard .metric-difference.positive{color:#5a753a}
+.living-dashboard .metric-card.featured .metric-difference.positive{color:#c3e59b}
+.living-dashboard :is(.input-table th,.input-table td>small,.input-table th>small,.result-tabs>button,.results-table th,.results-table td,.results-table td>small,.results-table .reason-cell,.leftover-row small,.leftover-row strong,.leftover-row strong>span,.notes-grid strong){color:#62794c}
+.living-dashboard .result-tabs>button.active{color:#496c2b}
+.living-dashboard :is(.discount-row strong,.discount-row small,.discount-row p,.discount-disclaimer){color:#857447}
+.living-dashboard .discount-row strong>span{color:#7b693b}
+.living-dashboard .control-title strong>span,.living-dashboard .number-field span{color:#71865b}
+.living-dashboard .svg-heading,.living-dashboard .svg-small{fill:#6c8155}
+.living-dashboard .flow-market-node .svg-small{fill:#b6cca7}
+.living-dashboard .status-chip,.living-dashboard .pill{color:#5d7c3c}
+.living-dashboard .lab-button{color:#526f32}
+.living-dashboard .alert-warning{color:#8a6b2a}
+.living-dashboard .alert-info{color:#5d7938}
+.living-dashboard .alert-error{color:#9e5540}
+.living-dashboard .status-chip.amber{color:#8e6825}
+.living-dashboard .count-chip{color:#63813e}
+.living-dashboard .scenario-caption button,.living-dashboard .page-footer button,.living-dashboard .button-small{color:#5e7a3f}
