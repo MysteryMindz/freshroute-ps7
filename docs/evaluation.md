@@ -89,3 +89,8 @@ This is a bounded browser and correctness check, not an exhaustive security/acce
 ## Real email/password login — supersedes pending-auth status above
 
 Release f95cf1d passed all 54 tests, production build and deployment in Actions run 38719652459. The owner supplied a new Supabase project and disabled email confirmation. At 10:22 UTC on 15 October 2026, actual production UI signup, sign-out, password login, refresh/session restoration, invalid-password feedback and guest entry passed using a synthetic verification account. Mobile login at 390px had no page overflow. No JavaScript page exceptions occurred. The expected invalid-password request returned HTTP400 and was handled with an inline error; it is not an unexplained runtime failure. Real API signup/getUser/refresh/password login/signout also passed. Email ownership is unverified while confirmation is disabled. Password reset/cloud scenario storage remain outside this submission.
+
+
+## Focused page navigation
+
+Release d9aef38 deployed successfully in Actions run 38720587198. All 54 tests and production build passed. The live browser verified all six dashboard routes with only the intended panels rendered. A 91kg inventory edit survived navigation into Scenario Lab, +4h delay recalculation, report download and return to Inventory. Direct loading of the allocation route worked. Mobile inventory at 390px had no document overflow. No JavaScript page exceptions were observed. A fresh URL query bypassed an older cached HTML response during verification.

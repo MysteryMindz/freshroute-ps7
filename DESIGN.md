@@ -45,3 +45,8 @@ The hero is the principal expressive moment. Canvas animation pauses offscreen a
 - Never portray allocation geometry as geographic routing.
 - Do not add decorative heading eyebrows or gradient text.
 - Keep real account status explicit until live provider verification passes.
+
+
+## Focused dashboard pages
+
+Dashboard routes now separate Overview, Inventory & Markets, Allocations & Comparison, Scenario Lab, Stock & Price Reviews and Model & Assumptions. Only the current page content mounts; shared draft and result state stay in the parent dashboard. Navigation uses real hash links, browser history and aria-current. Overview shows the comparison and allocation network; detailed editors, tables and methodology no longer compete on one long page. Planning notes collapse behind a readable disclosure. Page entry uses a brief 180ms opacity/4px movement transition; reduced-motion disables movement. No new dependency was added.

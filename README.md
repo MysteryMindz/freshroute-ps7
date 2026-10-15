@@ -6,7 +6,7 @@ A browser-only produce-distribution planning simulator built for Bugged Out PS7.
 
 **Demonstration data is synthetic. All outcomes are modeled, not evidence of real distributor savings.**
 
-The **Living Supply Chain** landing page includes pointer-responsive particles, animated real allocation paths and an interactive delay demonstration using the actual engine. Launch the full planner directly as a guest. The redesigned dispatch workspace retains editable scenarios, honest comparisons and downloads.
+The **Living Supply Chain** landing page includes pointer-responsive particles, animated real allocation paths and an interactive delay demonstration using the actual engine. Launch the full planner directly as a guest. The redesigned dispatch workspace separates Overview, Inventory & Markets, Allocations, Scenario Lab, Stock Reviews and Model Notes into focused hash routes. It retains shared editable scenarios, honest comparisons and downloads.
 
 **Account status:** real email/password sign-in and account creation use the configured Supabase project. Guest access remains complete. Session restoration and sign-out are included. Email verification follows the project setting; cloud scenario storage and password reset are outside this submission. GitHub OAuth is not offered because that provider is not enabled.
 
