@@ -16,7 +16,7 @@ export function readAuthConfig(url: unknown, key: unknown): AuthConfig | null {
 }
 export type Route = 'home' | 'signin' | 'dashboard';
 export function readRoute(hash: string): Route {
-  return hash === '#/dashboard' ? 'dashboard' : hash === '#/signin' ? 'signin' : 'home';
+  return /^#\/dashboard(?:\/(?:inventory|allocations|lab|insights|model))?$/.test(hash) ? 'dashboard' : hash === '#/signin' ? 'signin' : 'home';
 }
 export function oauthReturnError(search: string): string | null {
   const code = new URLSearchParams(search).get('error');
@@ -24,4 +24,10 @@ export function oauthReturnError(search: string): string | null {
   return code === 'access_denied'
     ? 'GitHub sign-in was cancelled or access was declined. Try again, or enter the guest demo.'
     : 'Sign-in could not be completed. Try again, or enter the guest demo.';
+}
+
+export type DashboardPage = "overview" | "inventory" | "allocations" | "lab" | "insights" | "model";
+export function readDashboardPage(hash: string): DashboardPage {
+  const page = hash.split("/")[2];
+  return ["inventory", "allocations", "lab", "insights", "model"].includes(page) ? page as DashboardPage : "overview";
 }

@@ -55,6 +55,7 @@ describe('Browser-public authentication configuration', () => {
 describe('Static-site routes and safe OAuth errors', () => {
   it('recognizes the three supported hash routes and safely defaults unknown routes', () => {
     expect(readRoute('#/dashboard')).toBe('dashboard');
+    for (const page of ['inventory','allocations','lab','insights','model']) expect(readRoute(`#/dashboard/${page}`)).toBe('dashboard');
     expect(readRoute('#/signin')).toBe('signin');
     for (const hash of ['', '#/', '#/unknown', '#/dashboard/extra', '#access_token=example', '#/signin?next=external']) expect(readRoute(hash)).toBe('home');
   });
