@@ -1,0 +1,10 @@
+node_modules/
+dist/
+work/
+outputs/
+.env*
+*.local
+*.tsbuildinfo
+.impeccable/
+.21st/
+.playwright-mcp/
