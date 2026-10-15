@@ -84,3 +84,8 @@ UI release `196a78aa980d270147109cdd4b0635296fd13d0c` deployed successfully in [
 - Independent focused review returned **Ship for the current pending-auth release**, after build-time credential validation and an export warning before OAuth were added.
 
 This is a bounded browser and correctness check, not an exhaustive security/accessibility audit or evidence of real distributor performance. **Real GitHub OAuth is still unconfigured and unverified**, as disclosed in the interface and setup documentation. No claim of working accounts is made.
+
+
+## Real email/password login — supersedes pending-auth status above
+
+Release f95cf1d passed all 54 tests, production build and deployment in Actions run 38719652459. The owner supplied a new Supabase project and disabled email confirmation. At 10:22 UTC on 15 October 2026, actual production UI signup, sign-out, password login, refresh/session restoration, invalid-password feedback and guest entry passed using a synthetic verification account. Mobile login at 390px had no page overflow. No JavaScript page exceptions occurred. The expected invalid-password request returned HTTP400 and was handled with an inline error; it is not an unexplained runtime failure. Real API signup/getUser/refresh/password login/signout also passed. Email ownership is unverified while confirmation is disabled. Password reset/cloud scenario storage remain outside this submission.

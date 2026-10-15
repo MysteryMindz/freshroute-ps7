@@ -35,7 +35,7 @@ FreshRoute is a browser-based planning simulator. It allocates produce batches t
 
 ## Account status
 
-Guest access includes the complete simulator. The sign-in interface and Supabase integration are implemented, but the owner has not yet configured the new project/provider. Real GitHub sign-in is pending and has not been live-verified. Do not claim working accounts.
+Guest access includes the complete simulator. Real email/password account creation, login, session restoration and sign-out are now configured and live-verified. GitHub OAuth is not offered. Email confirmation is disabled by the owner for immediate hackathon signup; email ownership is not verified. Password reset and cloud scenario storage are not implemented.
 
 ## Submission checklist
 
