@@ -48,3 +48,7 @@ Live app: https://mysterymindz.github.io/freshroute-ps7/
 GitHub Actions run 38686838986 passed locked installation, all 28 tests, production compilation and Pages deployment. The live app was opened in a browser. All four presets returned LP solutions without validation errors. The assumptions navigation scrolled into view on mobile, horizontal-scroll guidance was visible, and the 390px document had no horizontal overflow. Browser console reported zero errors on that live session.
 
 The dependency update to Vitest 5.0.4 reported zero known npm vulnerabilities at installation time. This is a point-in-time dependency check, not a security guarantee.
+
+An independent UI reviewer returned **Ship** for the four requested finishing fixes: secondary text contrast (sampled 6.57–7.13:1), mobile scroll discoverability, assumptions navigation and removal of decorative heading eyebrows. That verdict covers those four findings rather than asserting that every possible UI defect is absent.
+
+GitHub Actions run 38687179170 also passed on the reviewed release. Live JSON import rejected malformed syntax, accepted a valid sample while preserving its synthetic provenance, and recalculated successfully. Both allocation CSV and report JSON were downloaded from the live site, and a direct page refresh worked.
