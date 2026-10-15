@@ -66,3 +66,21 @@ Test Files  4 passed (4)
 ```
 
 The 26 added auth tests cover publishable and legacy anonymous configuration formats, rejection of obvious secret/service-role formats, malformed keys, unsafe URL forms, absent configuration, supported hash routes and fixed nonreflective OAuth error messages. Token fixtures are synthetic strings. These checks validate local configuration behavior; they do not prove JWT authenticity, real OAuth consent, callback exchange or session restoration. Those require the owner setup and live checklist in `docs/auth-setup.md`.
+
+## Living Supply Chain redesign — verified release
+
+UI release `196a78aa980d270147109cdd4b0635296fd13d0c` deployed successfully in [Actions run 38691668549](https://github.com/MysteryMindz/freshroute-ps7/actions/runs/38691668549). Verified on the actual production URL on 15 October 2026:
+
+- Desktop 1440×1000 and mobile 390×844: landing, sign-in and dashboard fit without document-level horizontal overflow.
+- Self-hosted Manrope and DM Sans loaded; zero Google Fonts network requests in the inspected live session.
+- Landing +4-hour delay recomputed FEFO net ₹10,310 / 360kg / 90kg spoilage and LP net ₹12,230 / 360kg / 150kg spoilage. The unfavorable spoilage trade-off remained visible.
+- All four normal/delay/capacity/demand-spike presets returned LP solutions with no analysis errors. Normal outcome remained ₹12,490 versus FEFO ₹10,510.
+- Live allocation CSV and analysis JSON were downloaded. Dashboard hash-route refresh and guest entry from sign-in worked.
+- Mobile menu closed and scrolled to the demo; measured destination top 0.2px after scrolling completed. Dashboard section navigation retained `#/dashboard`.
+- Reduced-motion CSS disabled the network animation. The Canvas implementation also checks the preference and stops continuous rendering.
+- Browser console reported zero errors and zero warnings during the inspected live session.
+- Local edits (batch quantity 91kg), stale state, delay recalculation and internal home/sign-in navigation were exercised. The edited workspace survived in-app navigation. Refresh and real OAuth remain full-page transitions: export first.
+- A deliberately fake private-key-format configuration caused a pre-bundle build failure with a sanitized message. The normal production build passed. No actual private key was used.
+- Independent focused review returned **Ship for the current pending-auth release**, after build-time credential validation and an export warning before OAuth were added.
+
+This is a bounded browser and correctness check, not an exhaustive security/accessibility audit or evidence of real distributor performance. **Real GitHub OAuth is still unconfigured and unverified**, as disclosed in the interface and setup documentation. No claim of working accounts is made.
